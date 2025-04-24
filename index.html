@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Премиум тракторы TZR | Официальный дилер</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- Убираем весь блок загрузчика -->
+    <!-- <div class="loader"> ... </div> -->
+
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span>TZR</span>
+                    <span class="premium">PREMIUM</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#" class="nav-link">Главная</a></li>
+                        <li class="nav-item"><a href="#catalog" class="nav-link">Каталог</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">О нас</a></li>
+                        <li class="nav-item"><a href="#service" class="nav-link">Сервис</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <!-- Переключатель темы -->
+                    <div class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-sun sun-icon"></i>
+                        <i class="fas fa-moon moon-icon"></i>
+                    </div>
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <button class="contact-btn">Связаться с нами</button>
+                </div>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1 class="hero-title text-scramble">Мощь и надежность в каждой модели TZR</h1>
+                    <p class="hero-text animated">Инновационные сельскохозяйственные машины для любых задач</p>
+                    <div class="hero-actions animated">
+                        <a href="#catalog" class="btn btn-primary">Смотреть каталог</a>
+                        <a href="#specs" class="btn btn-outline">Технические характеристики</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <div class="hero-tractor animated"></div>
+                        <!-- Убираем технические элементы -->
+                        <!-- <div class="tech-element"></div> -->
+                        <!-- <div class="tech-schematic"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Каталог техники</h2>
+                <p class="section-subtitle">Выберите модель, отвечающую вашим потребностям</p>
+            </div>
+            
+            <div class="catalog-filter">
+                <div class="filter-group">
+                    <label>Тип техники</label>
+                    <select class="filter-select">
+                        <option value="all">Все модели</option>
+                        <option value="mini">Мини-тракторы</option>
+                        <option value="medium">Средние тракторы</option>
+                        <option value="large">Крупные тракторы</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Мощность, л.с.</label>
+                    <div class="range-slider">
+                        <input type="range" min="20" max="100" value="20" class="slider" id="power-slider">
+                        <span class="range-value">20</span>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button class="btn btn-filter">Применить фильтры</button>
+                    <button class="btn btn-reset">Сбросить</button>
+                </div>
+            </div>
+            
+            <div class="catalog-grid">
+                <div class="catalog-item" data-type="mini" data-power="25">
+                    <div class="item-badge">Популярный</div>
+                    <div class="item-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">TZR T-25 BOM</h3>
+                        <p class="item-description">Универсальная машина для небольшой фермы или сада</p>
+                        <div class="item-specs">
+                            <div class="spec">
+                                <span class="spec-label">Мощность</span>
+                                <span class="spec-value">25 л.с.</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Тип</span>
+                                <span class="spec-value">Мини</span>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <span class="price">308 900 ₽</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-primary">Подробнее</button>
+                            <button class="btn btn-icon"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Repeat for other models -->
+                <div class="catalog-item" data-type="mini" data-power="30">
+                    <div class="item-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">TZR T-30 BOM 4x4</h3>
+                        <p class="item-description">Мощный минитрактор для крупного приусадебного участка</p>
+                        <div class="item-specs">
+                            <div class="spec">
+                                <span class="spec-label">Мощность</span>
+                                <span class="spec-value">30 л.с.</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Тип</span>
+                                <span class="spec-value">Мини 4x4</span>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <span class="price">410 900 ₽</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-primary">Подробнее</button>
+                            <button class="btn btn-icon"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="catalog-item" data-type="medium" data-power="60">
+                    <div class="item-badge">Новинка</div>
+                    <div class="item-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">TZR TE-244</h3>
+                        <p class="item-description">Универсальный трактор для сельского хозяйства</p>
+                        <div class="item-specs">
+                            <div class="spec">
+                                <span class="spec-label">Мощность</span>
+                                <span class="spec-value">60 л.с.</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Тип</span>
+                                <span class="spec-value">Средний</span>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <span class="price">671 800 ₽</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-primary">Подробнее</button>
+                            <button class="btn btn-icon"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="catalog-item" data-type="medium" data-power="85">
+                    <div class="item-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">TZR TE-354</h3>
+                        <p class="item-description">Надежный трактор для среднего фермерского хозяйства</p>
+                        <div class="item-specs">
+                            <div class="spec">
+                                <span class="spec-label">Мощность</span>
+                                <span class="spec-value">85 л.с.</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Тип</span>
+                                <span class="spec-value">Средний</span>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <span class="price">983 900 ₽</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-primary">Подробнее</button>
+                            <button class="btn btn-icon"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="catalog-more">
+                <button class="btn btn-outline btn-load-more">Загрузить еще модели</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-inner">
+                <div class="about-image">
+                    <div class="image-3d-wrapper">
+                        <div class="placeholder-image-3d"></div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">О нашей компании</h2>
+                    <p class="about-text">Мы являемся официальным дилером тракторов TZR, предлагая лучшие модели сельскохозяйственной техники с полной гарантией производителя и профессиональным сервисным обслуживанием.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Официальная гарантия</h3>
+                                <p>До 3 лет гарантии на всю технику</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Сервисный центр</h3>
+                                <p>Профессиональное обслуживание и ремонт</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-truck-moving"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Доставка по всей России</h3>
+                                <p>Быстрая доставка в любой регион</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Связаться с нами</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service" class="service">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Сервис и гарантия</h2>
+                <p class="section-subtitle">Мы обеспечиваем полное обслуживание нашей техники</p>
+            </div>
+            
+            <div class="service-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="service-title">Техническое обслуживание</h3>
+                    <p class="service-text">Регулярное ТО по графику с использованием оригинальных запчастей</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-title">Гарантийный ремонт</h3>
+                    <p class="service-text">Быстрое устранение любых неисправностей в рамках гарантии</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="service-title">Послегарантийное обслуживание</h3>
+                    <p class="service-text">Поддержка техники на протяжении всего срока службы</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="service-title">Склад запчастей</h3>
+                    <p class="service-text">Постоянное наличие оригинальных запчастей и расходников</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-inner">
+                <div class="contact-info">
+                    <h2 class="section-title">Свяжитесь с нами</h2>
+                    <p class="contact-text">Наши специалисты готовы ответить на все ваши вопросы и помочь с выбором подходящей техники</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Телефон</h3>
+                                <p>8 800 302 20 68</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>sale@rusich.team</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Адрес</h3>
+                                <p>г. Москва, ул. Тракторная, 1</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Напишите нам</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Сообщение" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span>TZR</span>
+                        <span class="premium">PREMIUM</span>
+                    </div>
+                    <p class="footer-text">Официальный дилер сельскохозяйственной техники TZR. Надежные решения для вашего бизнеса.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Каталог</h3>
+                    <ul class="footer-list">
+                        <li><a href="#">Мини-тракторы</a></li>
+                        <li><a href="#">Средние тракторы</a></li>
+                        <li><a href="#">Тяжелые тракторы</a></li>
+                        <li><a href="#">Навесное оборудование</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Услуги</h3>
+                    <ul class="footer-list">
+                        <li><a href="#">Продажа техники</a></li>
+                        <li><a href="#">Сервисное обслуживание</a></li>
+                        <li><a href="#">Запасные части</a></li>
+                        <li><a href="#">Лизинг и кредит</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Контакты</h3>
+                    <ul class="footer-list">
+                        <li><i class="fas fa-phone"></i> 8 800 302 20 68</li>
+                        <li><i class="fas fa-envelope"></i> sale@rusich.team</li>
+                        <li><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Тракторная, 1</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2023 TZR Premium. Все права защищены.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Карта сайта</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Добавляем Email.js для отправки формы -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Инициализация Email.js (замените YOUR_PUBLIC_KEY на ваш реальный ключ)
+            emailjs.init("YOUR_PUBLIC_KEY");
+        });
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/tractor-animation.js"></script>
+</body>
+</html>

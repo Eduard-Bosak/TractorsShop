@@ -1,0 +1,569 @@
+/**
+ * Стили анимаций для сайта о тракторах
+ * Версия 2.0.0 (24.04.2025)
+ */
+
+/* Контейнер для анимации тракторов */
+.tractor-animation-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #8B4513;
+}
+
+/* Стили для канваса с тракторами */
+.tractor-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Анимация появления элементов страницы */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация вращения элементов */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Анимация пульсации для кнопок и элементов управления */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Анимация горизонтального перемещения */
+@keyframes slideInFromLeft {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+
+/* Анимация дрожания - используется для активных элементов */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Классы для подключения анимаций к элементам */
+.fade-in-up {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.rotate {
+    animation: rotate 10s linear infinite;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+.slide-left {
+    animation: slideInFromLeft 1s ease forwards;
+}
+
+.slide-right {
+    animation: slideInFromRight 1s ease forwards;
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+/* Анимации для отдельных элементов с задержками */
+.tractor-card {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.tractor-card:nth-child(1) { animation-delay: 0.1s; }
+.tractor-card:nth-child(2) { animation-delay: 0.2s; }
+.tractor-card:nth-child(3) { animation-delay: 0.3s; }
+.tractor-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Анимация вращения колес трактора при наведении */
+.tractor-wheel {
+    transition: transform 1s ease;
+}
+
+.tractor-image:hover .tractor-wheel {
+    transform: rotate(360deg);
+}
+
+/* Анимация подсветки для интерактивных элементов */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 165, 0, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 165, 0, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 165, 0, 0.5); }
+}
+
+.interactive-element {
+    animation: glow 2s infinite;
+}
+
+/* Анимация загрузки страницы */
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: rotate 1s linear infinite;
+    margin: 20px auto;
+}
+
+/* Плавные переходы для всех элементов */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Эффект параллакса для фоновых изображений */
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Анимация для появления подсказок */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Эффект волны для кнопок при нажатии */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+}
+
+.ripple:active::after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+}
+
+/* Анимации для отдельных элементов с задержками */
+.hero-title, .hero-text, .hero-actions {
+    opacity: 0;
+}
+
+.hero-title.animated {
+    animation: fadeIn 1s ease 0.3s forwards;
+}
+
+.hero-text.animated {
+    animation: fadeIn 1s ease 0.6s forwards;
+}
+
+.hero-actions.animated {
+    animation: fadeIn 1s ease 0.9s forwards;
+}
+
+.hero-tractor {
+    opacity: 0;
+    animation: scale 1.2s ease 0.5s forwards;
+}
+
+/* Анимация для секций */
+.section-title, .section-subtitle {
+    opacity: 0;
+}
+
+.section-title.animated {
+    animation: fadeIn 1s ease forwards;
+}
+
+.section-subtitle.animated {
+    animation: fadeIn 1s ease 0.3s forwards;
+}
+
+/* Анимации для элементов каталога */
+.catalog-item {
+    opacity: 0;
+}
+
+.catalog-item.animated {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Анимированные заполнители для изображений тракторов */
+.placeholder-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder-image:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Эффект 3D трактора */
+.effect3d-wrapper {
+    perspective: 1000px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.effect3d-wrapper:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.effect3d-wrapper .placeholder-image {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+/* Анимация плавания для определенных элементов */
+.service-icon {
+    animation: float 3s infinite ease-in-out;
+}
+
+/* Анимации наведения для кнопок */
+.btn-primary:hover, .btn-outline:hover {
+    box-shadow: 0 10px 20px rgba(255, 59, 48, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Анимации при прокрутке */
+.animate-on-scroll {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.animate-on-scroll.from-left {
+    transform: translateX(-100px);
+}
+
+.animate-on-scroll.from-right {
+    transform: translateX(100px);
+}
+
+.animate-on-scroll.from-bottom {
+    transform: translateY(100px);
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Анимированное переключение меню */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Анимация мобильного меню */
+.mobile-nav {
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+}
+
+/* Эффекты фокуса для полей формы */
+.form-group input:focus, .form-group textarea:focus {
+    box-shadow: 0 0 0 3px rgba(255, 59, 48, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Анимированный счетчик */
+.counter {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: inline-block;
+    position: relative;
+}
+
+.counter:after {
+    content: attr(data-label);
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 5px;
+    opacity: 0.7;
+}
+
+/* Специальная анимация для колес тракторов */
+@keyframes wheelRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Эффект параллакса для фона */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-position 0.3s ease;
+}
+
+/* Новые эффекты для тракторов */
+
+/* Подсветка при наведении */
+.tractor-highlight {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+/* Тень трактора */
+.tractor-shadow {
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.2);
+    filter: blur(10px);
+    z-index: -1;
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+}
+
+.item-image:hover .tractor-shadow {
+    transform: translateY(8px) scale(1.05);
+    opacity: 0.25;
+}
+
+/* Анимация дыма */
+.smoke-container {
+    position: absolute;
+    bottom: 40%;
+    right: 20%;
+    width: 50px;
+    height: 100px;
+    z-index: 1;
+}
+
+@keyframes smoke {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100px) scale(2);
+        opacity: 0;
+    }
+}
+
+.smoke-particle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(200, 200, 200, 0.6);
+    animation: smoke 3s infinite linear;
+    bottom: 0;
+}
+
+/* Анимация отблеска */
+@keyframes shine {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.catalog-item .placeholder-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-25deg);
+    z-index: 2;
+    animation: shine 8s infinite;
+}
+
+/* Переключатель звука */
+.sound-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.sound-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Бейдж экономичности */
+.eco-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    z-index: 3;
+    animation: pulse 2s infinite;
+}
+
+/* Анимация для ярлыка новинки */
+.new-tag {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+    transform-origin: center;
+    animation: pulseNew 2s infinite;
+}
+
+@keyframes pulseNew {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* --- FIX: добавить недостающие анимации --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes scale {
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1);     opacity: 1; }
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0);   }
+    50%     { transform: translateY(-8px); }
+}
+/* --- конец исправлений --- */
+
+/* Запрещаем повторную анимацию для .text-scramble */
+.hero-title.text-scramble{
+    animation: none !important; /* убираем fadeIn */
+    opacity: 1;                 /* всегда видим */
+    display: inline-block;  /* фиксируем размер */
+    white-space: nowrap;    /* предотвращаем перенос */
+}
